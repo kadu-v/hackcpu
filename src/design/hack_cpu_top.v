@@ -42,7 +42,7 @@ hack_core hack_core_0(
 hack_ram hack_ram_0(
     .clk        (   clk     ),
     .write_en   (   write_m ),
-    .addr       (   pc      ),
+    .addr       (   addr_m  ),
     .in_data    (   out_m   ),
 
     .out_data   (   in_m    )   

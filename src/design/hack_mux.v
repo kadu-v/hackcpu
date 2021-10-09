@@ -6,6 +6,6 @@ module hack_mux (
     output  [15:0]  out_data
 );
 
-assign out_data = mux_sel ? in_data0 : in_data1;
+assign out_data = ~mux_sel ? in_data0 : in_data1;
 
 endmodule
