@@ -7,4 +7,5 @@ module hack_mux (
 );
 
 assign out_data = mux_sel ? in_data0 : in_data1;
+
 endmodule

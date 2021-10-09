@@ -4,6 +4,7 @@ module hack_pc_load (
     input wire j1,
     input wire j2,
     input wire j3,
+    input wire pc_flag,
 
     output wire load_pc
 );
