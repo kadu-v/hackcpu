@@ -1,6 +1,6 @@
 module hack_rom (
     input wire          clk,
-    input wire [13:0]   addr,
+    input wire [15:0]   addr,
 
     output reg [15:0]   out_data
 );
