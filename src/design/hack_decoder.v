@@ -10,7 +10,7 @@ wire sel_mux2;
 
 assign write_m  = inst[3] & inst[15];
 assign load_d   = inst[4] & inst[15];
-assign load_a   = inst[5] & inst[15];
+assign load_a   = inst[5] & ~inst[15];
 assign sel_mux2 = inst[12] & inst[15];
 
 
