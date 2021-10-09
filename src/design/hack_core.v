@@ -10,11 +10,10 @@ module hack_core (
     input wire          xrst,
     input wire [15:0]   inst,
     input wire [15:0]   in_m,
-    input wire          reset,
 
     output wire [15:0]  out_m,
     output wire         write_m,
-    output wire [15:0]  addr,
+    output wire [15:0]  addr_m,
     output wire [15:0]  pc
 );
 
@@ -37,6 +36,10 @@ wire [15:0] out_data_d;
 // ALU
 wire [15:0] out_data_alu;
 
+assign {j1, j2, j3, write_m, load_a, load_d, no, f, ny, zy, nx, zx, mux_sel1, mux_sel0, pc_flag} = out_data_dec;
+assign addr_m = out_data_a;
+
+
 // decoder
 hack_decoder hack_decoder_0(
     .inst       (   inst        ),
@@ -44,7 +47,7 @@ hack_decoder hack_decoder_0(
     .out_data   (   out_data_dec )
 );
 
-assign {j1, j2, j3, write_m, load_a, load_d, no, f, ny, zy, nx, zx, mux_sel1, mux_sel0, pc_flag} = out_data_dec;
+
 
 // Mux 0
 hack_mux hack_mux_0(
@@ -96,7 +99,7 @@ hack_alu hack_alu(
 
     .zr         (   zr              ),
     .ng         (   ng              ),
-    .out_data   (   out_data_alu    )
+    .out_data   (   out_m           )
 );
 
 hack_pc_load hack_pc_load_0(
