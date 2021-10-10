@@ -16,7 +16,7 @@ FPGAボードを入手次第実装してみようと思っています．
     $ iverilo -I ../design test_hack_cpu.v
     $ ./a.out
     ```
-    生成されたvhdをgtkawaveで読み込むと、mem[0]とmem[1]の大きい方をmem[2]に格納されます．(初期設定だとmem[0]=1, mem[1]=5なので、mem[2]=5)
+    生成されたvhdをgtkawaveで読み込むと、mem[0]とmem[1]の大きい方をmem[2]に格納されます．(初期設定だと以下のようにmem[0]=1, mem[1]=5なので、mem[2]=5と格納されます.)  
     ![max.png](https://github.com/kadu-v/hackcpu/blob/main/imgs/max.png)
 
 # Hack CPUのRAMに関する仕様について
