@@ -19,8 +19,8 @@ FPGAボードを入手次第実装してみようと思っています．
     生成されたvhdをgtkawaveで読み込むと、mem[0]とmem[1]の大きい方をmem[2]に格納されます．(初期設定だと以下のようにmem[0]=1, mem[1]=5なので、mem[2]=5と格納されます.)  
     ![max.png](https://github.com/kadu-v/hackcpu/blob/main/imgs/max.png)
 
-# Hack CPUのRAMに関する仕様について
-Hack CPUのRAMは、仕様によると非同期読み出しのRAMです．
+# Hack CPUのRAM/ROMに関する仕様について
+Hack CPUのRAM/ROMは、仕様によると非同期読み出しのRAMです．
 従って、`hack_ram.v`では以下のように非同期RAMとして実装しています．
 ```verilog
 module hack_ram (...);
@@ -41,3 +41,4 @@ endmodule
 ```
 読み出しが非同期なので、FPGAボードの種類によっては内蔵のRAMに実装されなかったりするかもしれません．  
 詳しい方がいましたら教えてください．
+`hack_rom.v`でも同様に非同期ROMになています．
