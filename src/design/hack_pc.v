@@ -8,6 +8,7 @@ module hack_pc (
     output reg [15:0] out_data
 );
 
+
 always @(posedge clk) begin
     if (!xrst) begin
         out_data <= 0;
